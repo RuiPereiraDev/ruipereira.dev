@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Rui Pereira</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #22262e;
+            --foreground: #efefef;
+            --primary: #c31331;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Varela Round', sans-serif;
+            background: var(--background);
+            color: var(--foreground);
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 0.25rem 0;
+        }
+
+        #name {
+            color: var(--primary);
+        }
+
+        ul {
+            font-size: .8em;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        li a {
+            color: var(--foreground);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+        }
+
+        li a:hover {
+            color: var(--primary);
+        }
+
+        button.link {
+            background: transparent;
+            border: none;
+            outline: 0;
+            padding: 0;
+            color: var(--foreground);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted var(--primary);
+        }
+
+        button.link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <p><strong id="name">Rui Pereira</strong> – Back-End/Software Developer</p>
+    <ul>
+        <li><a href="https://github.com/r4g3baby" target="_blank">GitHub</a></li>
+        <li><a href="https://twitter.com/r4g3baby" target="_blank">Twitter</a></li>
+        <li>
+            <button class="link" data-tippy-content="R4G3_BABY#0001">Discord</button>
+        </li>
+    </ul>
+</div>
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+    tippy('[data-tippy-content]', {
+        interactive: true,
+        hideOnClick: false
+    });
+</script>
+</body>
+</html>

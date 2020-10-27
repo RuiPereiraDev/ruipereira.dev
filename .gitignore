@@ -1,0 +1,8 @@
+### IDE specific files ###
+.idea/
+*.iml
+modules.xml
+*.ipr
+
+.vscode/
+*.code-workspace
