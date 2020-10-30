@@ -15,7 +15,7 @@
     <link href="https://unpkg.com/wenk/dist/wenk.min.css" rel="stylesheet">
     <style>
         :root {
-            --background: #22262e;
+            --background: #14151a;
             --foreground: #efefef;
             --primary: #c31331;
         }
@@ -43,7 +43,9 @@
         }
 
         p {
-            margin: 0.25rem 0;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 2px 0;
         }
 
         #name {
@@ -51,7 +53,8 @@
         }
 
         ul {
-            font-size: .8em;
+            font-size: 14px;
+            margin: 10px;
             padding: 0;
         }
 
@@ -76,6 +79,7 @@
             outline: 0;
             padding: 0;
             color: var(--foreground);
+            font-size: 14px;
             text-decoration: none;
             cursor: pointer;
             border-bottom: 1px dotted var(--primary);
@@ -92,17 +96,15 @@
     </style>
 </head>
 <body>
-<div class="wrapper">
+<main class="wrapper">
     <p><strong id="name">Rui Pereira</strong> – Back-End/Software Developer</p>
     <ul>
         <li><a href="https://github.com/r4g3baby">GitHub</a></li>
         <li><a href="https://twitter.com/r4g3baby">Twitter</a></li>
         <li><a href="mailto:me@r4g3baby.com">Email</a></li>
-        <li>
-            <button onclick="handleCopy(this)" data-wenk="R4G3_BABY#0001">Discord</button>
-        </li>
+        <li><button onclick="handleCopy(this)" data-wenk="R4G3_BABY#0001">Discord</button></li>
     </ul>
-</div>
+</main>
 
 <script>
     let blocked = false;
