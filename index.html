@@ -12,6 +12,7 @@
     <!-- /Favicons -->
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/wenk/dist/wenk.min.css" rel="stylesheet">
     <style>
         :root {
             --background: #22262e;
@@ -83,6 +84,11 @@
         button:hover {
             color: var(--primary);
         }
+
+        [data-wenk]:after {
+            background-color: #333;
+            padding: 5px 9px;
+        }
     </style>
 </head>
 <body>
@@ -92,17 +98,8 @@
         <li><a href="https://github.com/r4g3baby">GitHub</a></li>
         <li><a href="https://twitter.com/r4g3baby">Twitter</a></li>
         <li><a href="mailto:me@r4g3baby.com">Email</a></li>
-        <li><button data-tippy-content="R4G3_BABY#0001">Discord</button></li>
+        <li><button data-wenk="R4G3_BABY#0001">Discord</button></li>
     </ul>
 </div>
-
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-<script>
-    tippy('[data-tippy-content]', {
-        interactive: true,
-        hideOnClick: false
-    });
-</script>
 </body>
 </html>
