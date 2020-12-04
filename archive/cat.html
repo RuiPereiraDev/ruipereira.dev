@@ -2306,9 +2306,9 @@ full recode of the javascript side, mostly for fun.
     let pFrame = 0;
 
     function animate(reverse) {
-        document.getElementById('frame' + cFrame).style.display = 'block';
+        frames[cFrame - 1].style.display = 'block';
         if (pFrame > 0) {
-            document.getElementById('frame' + pFrame).style.display = '';
+            frames[pFrame - 1].style.display = '';
         }
 
         pFrame = cFrame;
