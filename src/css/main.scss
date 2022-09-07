@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/varela-round-v19-latin-regular.woff2') format('woff2'), url('./fonts/varela-round-v19-latin-regular.woff') format('woff');
+}
+
+html, body {
+  font-family: 'Varela Round', sans-serif;
+  background-color: #14151a;
+  color: #efefef;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapperMain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    border: 3px solid #c33131;
+    width: 138px;
+    height: 138px;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 16px 0 0;
+
+    strong {
+      color: #c33131;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    margin: 2px 0;
+  }
+
+  ul {
+    font-size: 26px;
+    margin: 10px;
+    padding: 0;
+
+    li {
+      display: inline;
+      margin: 6px;
+
+      a {
+        color: #efefef;
+        text-decoration: none;
+
+        &:hover {
+          color: #c33131;
+        }
+      }
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+}
+
+.wrapper404 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  img {
+    width: 75%;
+    max-width: 640px;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 16px 0 0;
+    color: #c33131;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 2px 0;
+
+    a {
+      color: #efefef;
+      text-decoration: none;
+      border-bottom: 1px dotted #c33131;
+
+      &:hover {
+        color: #c33131;
+      }
+    }
+  }
+}
+
+$wenk-bg-color: #333333;
+@import "wenk/dist/wenk";
+[data-wenk] {
+  &:after {
+    padding: 5px 9px;
+  }
+}

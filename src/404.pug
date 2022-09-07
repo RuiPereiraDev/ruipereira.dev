@@ -1,0 +1,11 @@
+doctype html
+html(lang='en')
+    - locals.is404 = true
+    include includes/head
+
+    body
+        main(class='wrapper404')
+            img(src='img/illustrations/page_not_found.svg' alt='Page Not Found')
+
+            h1 Page Not Found
+            p Oops! #[a(href='/') Click here] to go back home.
