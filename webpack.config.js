@@ -21,7 +21,7 @@ module.exports = {
                 test: /\.(woff(2)?|eot|ttf|otf|)$/,
                 type: 'asset',
                 generator: {
-                    filename: 'fonts/[name][ext]'
+                    filename: 'assets/fonts/[name][ext]'
                 }
             }
         ]
@@ -29,13 +29,13 @@ module.exports = {
     plugins: [
         new RemoveEmptyScriptsPlugin({}),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].min.css'
+            filename: 'assets/css/[name].min.css'
         }),
         new CopyPlugin({
             patterns: [
                 {from: './src/img/favicon.ico', to: ''},
                 {from: './src/archive', to: 'archive'},
-                {from: './src/img', to: 'img'}
+                {from: './src/img', to: 'assets/img'}
             ]
         }),
         new HtmlWebpackPlugin({
