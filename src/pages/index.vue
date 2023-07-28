@@ -1,0 +1,72 @@
+<script setup lang="ts">
+import GitHubIcon from 'remixicon/icons/Logos/github-line.svg'
+import EmailIcon from 'remixicon/icons/Business/at-line.svg'
+import InstagramIcon from 'remixicon/icons/Logos/instagram-line.svg'
+import SteamIcon from 'remixicon/icons/Logos/steam-line.svg'
+import DiscordIcon from 'remixicon/icons/Logos/discord-line.svg'
+</script>
+
+<template>
+  <main class="main">
+    <h1 class="title">Hi, I'm <strong>Rui Pereira</strong></h1>
+    <p class="description">Full-Stack Developer</p>
+
+    <div class="icons">
+      <a href="https://github.com/r4g3baby" target="_blank" aria-label="GitHub" data-wenk="GitHub">
+        <GitHubIcon/>
+      </a>
+      <a href="mailto:me@ruipereira.dev" aria-label="Email" data-wenk="Email">
+        <EmailIcon/>
+      </a>
+      <a href="https://instagram.com/ruipereira.dev" target="_blank" aria-label="Instagram" data-wenk="Instagram">
+        <InstagramIcon/>
+      </a>
+      <a href="https://steamcommunity.com/id/r4g3baby" target="_blank" aria-label="Steam" data-wenk="Steam">
+        <SteamIcon/>
+      </a>
+      <a href="https://discord.gg/cJnzTDGphE" target="_blank" aria-label="Discord" data-wenk="Discord">
+        <DiscordIcon/>
+      </a>
+    </div>
+  </main>
+</template>
+
+<style scoped lang="scss">
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    margin: 0;
+
+    strong {
+      color: #c33131;
+    }
+  }
+
+  .description {
+    margin: 6px 0 8px;
+  }
+
+  .icons {
+    a {
+      margin: 0 6px;
+      font-size: 1.75rem;
+
+      svg {
+        vertical-align: middle;
+        height: 1.75rem;
+        width: 1.75rem;
+
+        fill: #efefef;
+
+        &:hover {
+          fill: #c33131;
+        }
+      }
+    }
+  }
+}
+</style>

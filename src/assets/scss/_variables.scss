@@ -1,0 +1,29 @@
+$primary: #c33131;
+
+$body-text-color: #efefef;
+$body-background-color: #14151a;
+
+$link-color: #efefef;
+$link-decoration: none;
+$link-hover-color: #c33131;
+$link-hover-decoration: none;
+
+$header-height: 52px;
+$header-text-color: #a9a9b3;
+$header-background-color: #181b25;
+
+:root {
+  --var-primary: #{$primary};
+
+  --body-text-color: #{$body-text-color};
+  --body-background-color: #{$body-background-color};
+
+  --link-color: #{$link-color};
+  --link-decoration: #{$link-decoration};
+  --link-hover-color: #{$link-hover-color};
+  --link-hover-decoration: #{$link-hover-decoration};
+
+  --header-height: #{$header-height};
+  --header-text-color: #{$header-text-color};
+  --header-background-color: #{$header-background-color};
+}

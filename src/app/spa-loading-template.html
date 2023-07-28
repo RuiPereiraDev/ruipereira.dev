@@ -1,0 +1,33 @@
+<style>
+  html, body {
+    background-color: #14151a;
+    color: #efefef;
+  }
+
+  .spa-loading {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+    border: 2px solid #000;
+    border-right-color: #efefef;
+    border-bottom-color: #efefef;
+    border-radius: 50%;
+    animation: spa-loading 600ms linear infinite;
+  }
+
+  @keyframes spa-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div class="spa-loading"></div>

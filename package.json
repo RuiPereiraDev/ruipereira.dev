@@ -1,28 +1,25 @@
 {
-    "name": "ruipereira.dev",
-    "version": "1.0.0",
-    "repository": "git@github.com:r4g3baby/ruipereira.dev.git",
-    "author": "Rui Pereira <me@ruipereira.dev>",
-    "license": "MIT",
-    "private": true,
-    "scripts": {
-        "build": "webpack"
-    },
-    "dependencies": {
-        "wenk": "^1.0.8"
-    },
-    "devDependencies": {
-        "copy-webpack-plugin": "^11.0.0",
-        "css-loader": "^6.7.1",
-        "css-minimizer-webpack-plugin": "^4.0.0",
-        "html-webpack-plugin": "^5.5.0",
-        "mini-css-extract-plugin": "^2.6.1",
-        "pug": "^3.0.2",
-        "pug-loader": "^2.4.0",
-        "sass": "^1.54.9",
-        "sass-loader": "^13.0.2",
-        "webpack": "^5.74.0",
-        "webpack-cli": "^4.10.0",
-        "webpack-remove-empty-scripts": "^0.8.3"
-    }
+  "name": "ruipereira.dev",
+  "repository": "git@github.com:r4g3baby/ruipereira.dev.git",
+  "author": "Rui Pereira <me@ruipereira.dev>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "remixicon": "^3.4.0",
+    "ress": "^5.0.2",
+    "wenk": "^1.0.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230724.0",
+    "@nuxt/devtools": "^0.6.7",
+    "nuxt": "^3.7.0",
+    "sass": "^1.63.6",
+    "vite-svg-loader": "^4.0.0"
+  }
 }
