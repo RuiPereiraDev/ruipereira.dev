@@ -9,6 +9,14 @@ export default defineNuxtConfig({
     vite: {
         plugins: [svgLoader({})]
     },
+    nitro: {
+        storage: {
+            cache: {
+                driver: 'cloudflareKVBinding',
+                binding: 'CACHE'
+            }
+        }
+    },
     runtimeConfig: {
         plugins: {
             SimpleScore: [644],
