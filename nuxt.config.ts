@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     srcDir: 'src/',
     css: ['~/assets/scss/main.scss'],
     telemetry: false,
-    modules: ['@nuxt/devtools'],
+    modules: ['@nuxt/devtools', '@nuxt/image'],
     vite: {
         plugins: [svgLoader({})]
     },
