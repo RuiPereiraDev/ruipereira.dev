@@ -8,6 +8,8 @@ import DiscordIcon from 'remixicon/icons/Logos/discord-line.svg'
 
 <template>
   <main class="main">
+    <NuxtImg src="/assets/img/avatar.svg" width="138" height="138"/>
+
     <h1 class="title">Hi, I'm <strong>Rui Pereira</strong></h1>
     <p class="description">Full-Stack Developer</p>
 
@@ -37,6 +39,16 @@ import DiscordIcon from 'remixicon/icons/Logos/discord-line.svg'
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding-bottom: var(--header-height);
+
+  img {
+    margin: 0 0 10px;
+    border: 3px solid #c33131;
+    border-radius: 50%;
+    height: 138px;
+    width: auto;
+  }
 
   .title {
     margin: 0;
