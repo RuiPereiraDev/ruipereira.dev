@@ -6,6 +6,12 @@ export default defineNuxtConfig({
     css: ['~/assets/scss/main.scss'],
     telemetry: false,
     modules: ['@nuxt/devtools', '@nuxt/image'],
+    app: {
+      pageTransition: {
+          name: 'page',
+          mode: 'out-in'
+      }
+    },
     vite: {
         plugins: [svgLoader({})]
     },

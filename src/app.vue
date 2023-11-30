@@ -41,3 +41,47 @@ useHead({
     <NuxtPage/>
   </NuxtLayout>
 </template>
+
+<style lang="scss">
+.page-leave-active {
+  transition: all 0.4s;
+}
+
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
+.page-enter-active {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.page-enter-to {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+</style>
