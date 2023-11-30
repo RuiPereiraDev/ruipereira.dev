@@ -11,15 +11,15 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "remixicon": "^3.4.0",
+    "remixicon": "^3.6.0",
     "ress": "^5.0.2",
     "wenk": "^1.0.8"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.6.7",
-    "@nuxt/image": "^1.0.0",
-    "nuxt": "^3.8.1",
-    "sass": "^1.63.6",
+    "@nuxt/devtools": "^1.0.4",
+    "@nuxt/image": "^1.1.0",
+    "nuxt": "^3.8.2",
+    "sass": "^1.69.5",
     "vite-svg-loader": "^4.0.0"
   }
 }
