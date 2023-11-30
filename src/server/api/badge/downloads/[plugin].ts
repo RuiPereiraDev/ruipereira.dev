@@ -17,20 +17,20 @@ export default defineEventHandler(async (event) => {
 
     let downloads = 0
 
-    const requests: Promise<number>[] = []
+    const requests: Promise<number | void>[] = []
 
     const pluginConfig = plugins[plugin]
     if (pluginConfig.spigotID !== undefined) {
-        requests.push(getSpigotDownloads(pluginConfig.spigotID).then(result => downloads += result))
+        requests.push(getSpigotDownloads(pluginConfig.spigotID).then(result => downloads += result).catch(err => console.log(err)))
     }
     if (pluginConfig.hangarID !== undefined) {
-        requests.push(getHangarDownloads(pluginConfig.hangarID).then(result => downloads += result))
+        requests.push(getHangarDownloads(pluginConfig.hangarID).then(result => downloads += result).catch(err => console.log(err)))
     }
     if (pluginConfig.modrinthID !== undefined) {
-        requests.push(getModrinthDownloads(pluginConfig.modrinthID).then(result => downloads += result))
+        requests.push(getModrinthDownloads(pluginConfig.modrinthID).then(result => downloads += result).catch(err => console.log(err)))
     }
     if (pluginConfig.githubRepo !== undefined) {
-        requests.push(getGitHubDownloads(pluginConfig.githubRepo).then(result => downloads += result))
+        requests.push(getGitHubDownloads(pluginConfig.githubRepo).then(result => downloads += result).catch(err => console.log(err)))
     }
     await Promise.allSettled(requests)
 
