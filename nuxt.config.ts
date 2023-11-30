@@ -19,8 +19,18 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         plugins: {
-            SimpleScore: [644],
-            SimpleMOTD: [19306, 19307, 19308, 19309]
+            SimpleScore: {
+                bStats: [644],
+                spigotID: 23243,
+                hangarID: 'SimpleScore',
+                modrinthID: 'qG43Afem',
+                githubRepo: 'r4g3baby/SimpleScore'
+            },
+            SimpleMOTD: {
+                bStats: [19306, 19307, 19308, 19309],
+                spigotID: 2581,
+                githubRepo: 'r4g3baby/SimpleMOTD'
+            }
         }
     }
 })

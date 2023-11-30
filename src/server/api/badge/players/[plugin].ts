@@ -2,10 +2,10 @@ import {shieldResponse} from '~/server/utils/shields'
 import {getPluginPlayers} from '~/server/utils/bstats'
 import {formatMetric} from '~/server/utils/formatter'
 
-const plugins: { [p: string]: number[] } = useRuntimeConfig().plugins
+export default defineEventHandler(async (event) => {
+    const plugins: Record<string, any> = useRuntimeConfig(event).plugins
 
-export default defineEventHandler(async ({context}) => {
-    const plugin = context.params?.plugin
+    const plugin = getRouterParam(event, 'plugin')
     if (plugin === undefined || !(plugin in plugins)) {
         return shieldResponse('players', 'invalid', 'red', true)
     }
@@ -13,8 +13,8 @@ export default defineEventHandler(async ({context}) => {
     let players = 0
 
     const requests: Promise<number>[] = []
-    for (const pluginID of plugins[plugin]) {
-        requests.push(getPluginPlayers(pluginID).then(result => players += result))
+    for (const bStatsID of plugins[plugin].bStats) {
+        requests.push(getPluginPlayers(bStatsID).then(result => players += result))
     }
     await Promise.allSettled(requests)
 
