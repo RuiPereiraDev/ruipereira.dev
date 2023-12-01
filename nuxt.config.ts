@@ -7,10 +7,10 @@ export default defineNuxtConfig({
     telemetry: false,
     modules: ['@nuxt/devtools', '@nuxt/image'],
     app: {
-      pageTransition: {
-          name: 'page',
-          mode: 'out-in'
-      }
+        pageTransition: {
+            name: 'page',
+            mode: 'out-in'
+        }
     },
     vite: {
         plugins: [svgLoader({})]
