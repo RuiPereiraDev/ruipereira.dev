@@ -1,8 +1,9 @@
-import {shieldResponse} from '~/server/utils/shields'
-import {getPluginPlayers} from '~/server/utils/bstats'
+import {defineBadgeEventHandler} from '~/server/utils/badges'
 import {formatMetric} from '~/server/utils/formatter'
+import {badgen} from 'badgen'
+import {getPluginPlayers} from '~/server/utils/bstats'
 
-export default defineEventHandler(async (event) => {
+export default defineBadgeEventHandler(async (event) => {
     const plugins: Record<string, any> = useRuntimeConfig(event).plugins
 
     let players = 0
@@ -15,5 +16,7 @@ export default defineEventHandler(async (event) => {
     }
     await Promise.allSettled(requests)
 
-    return shieldResponse('players', formatMetric(players), 'blue')
+    return badgen({
+        label: 'players', status: formatMetric(players), color: 'blue'
+    })
 })

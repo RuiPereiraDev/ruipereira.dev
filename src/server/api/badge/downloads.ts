@@ -1,5 +1,6 @@
-import {shieldResponse} from '~/server/utils/shields'
+import {defineBadgeEventHandler} from '~/server/utils/badges'
 import {formatMetric} from '~/server/utils/formatter'
+import {badgen} from 'badgen'
 import {
     getGitHubDownloads,
     getHangarDownloads,
@@ -7,7 +8,7 @@ import {
     getSpigotDownloads
 } from '~/server/utils/downloads'
 
-export default defineEventHandler(async (event) => {
+export default defineBadgeEventHandler(async (event) => {
     const plugins: Record<string, any> = useRuntimeConfig(event).plugins
 
     let downloads = 0
@@ -30,5 +31,7 @@ export default defineEventHandler(async (event) => {
     }
     await Promise.allSettled(requests)
 
-    return shieldResponse('downloads', formatMetric(downloads), 'blue')
+    return badgen({
+        label: 'downloads', status: formatMetric(downloads), color: 'blue'
+    })
 })

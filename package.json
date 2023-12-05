@@ -11,6 +11,7 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "badgen": "^3.2.3",
     "remixicon": "^3.6.0",
     "ress": "^5.0.2",
     "wenk": "^1.0.8"
