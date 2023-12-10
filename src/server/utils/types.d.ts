@@ -23,5 +23,6 @@ interface GitHubAsset {
 }
 
 interface GitHubRelease {
+    name: string
     assets: GitHubAsset[]
 }

@@ -1,12 +1,12 @@
-import {defineBadgeEventHandler} from '~/server/utils/badges'
-import {formatMetric} from '~/server/utils/formatter'
-import {badgen} from 'badgen'
 import {
+    defineBadgeEventHandler,
     getGitHubDownloads,
     getHangarDownloads,
     getModrinthDownloads,
     getSpigotDownloads
-} from '~/server/utils/downloads'
+} from '~/server/utils/badges'
+import {formatMetric} from '~/server/utils/formatter'
+import {badgen} from 'badgen'
 
 export default defineBadgeEventHandler(async (event) => {
     const plugins: Record<string, any> = useRuntimeConfig(event).plugins
