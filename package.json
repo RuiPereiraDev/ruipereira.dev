@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "badgen": "^3.2.3",
-    "remixicon": "^3.6.0",
+    "remixicon": "^3.7.0",
     "ress": "^5.0.2",
     "wenk": "^1.0.8"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.0.4",
+    "@nuxt/devtools": "^1.0.5",
     "@nuxt/image": "^1.1.0",
     "nuxt": "^3.8.2",
     "sass": "^1.69.5",
