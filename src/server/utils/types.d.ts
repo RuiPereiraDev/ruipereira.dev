@@ -26,3 +26,7 @@ interface GitHubRelease {
     name: string
     assets: GitHubAsset[]
 }
+
+interface DiscordGuild {
+    presence_count: number
+}

@@ -1,0 +1,16 @@
+import {defineBadgeEventHandler, getDiscordOnline} from '~/server/utils/badges'
+import {formatMetric} from '~/server/utils/formatter'
+import {badgen} from 'badgen'
+
+export default defineBadgeEventHandler(async (event) => {
+    const guildID: string = useRuntimeConfig(event).guildID
+
+    let online = 0
+    if (guildID !== undefined) {
+        online = await getDiscordOnline(guildID)
+    }
+
+    return badgen({
+        label: 'discord', status: `${formatMetric(online)} online`, color: 'green'
+    })
+})

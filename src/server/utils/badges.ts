@@ -43,6 +43,11 @@ export const getGitHubRelease = cachedFunction(async (repository: string): Promi
     return release.name
 }, {name: 'github/release', getKey: (repository) => repository, maxAge: 60 * 60, staleMaxAge: -1})
 
+export const getDiscordOnline = cachedFunction(async (guildID: string): Promise<number> => {
+    const guild = await apiFetch<DiscordGuild>(`https://discord.com/api/v6/guilds/${guildID}/widget.json`)
+    return guild.presence_count
+}, {name: 'discord/online', getKey: (guildID) => guildID, maxAge: 60 * 60, staleMaxAge: -1})
+
 export const defineBadgeEventHandler = <T extends EventHandlerRequest, D>(
     handler: EventHandler<T, D>
 ): EventHandler<T, D> => defineEventHandler<T>(async event => {

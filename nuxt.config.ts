@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         }
     },
     runtimeConfig: {
+        guildID: '217018114083127296',
         plugins: {
             SimpleScore: {
                 bStats: [644],
