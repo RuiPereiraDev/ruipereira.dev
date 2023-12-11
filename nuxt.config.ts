@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     nitro: {
         storage: {
             cache: {
-                driver: 'cloudflareKVBinding',
+                driver: 'cloudflareR2Binding',
                 binding: 'CACHE'
             }
         }
