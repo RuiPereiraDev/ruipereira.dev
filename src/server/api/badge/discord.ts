@@ -7,10 +7,10 @@ export default defineBadgeEventHandler(async (event) => {
 
     let online = 0
     if (guildID !== undefined) {
-        online = await getDiscordOnline(guildID)
+        online = await getDiscordOnline(guildID).catch(() => -1)
     }
 
     return badgen({
-        label: 'discord', status: `${formatMetric(online)} online`, color: 'green'
+        label: 'discord', status: `${formatMetric(online)} online`, color: (online < 0) ? 'red' : 'green'
     })
 })

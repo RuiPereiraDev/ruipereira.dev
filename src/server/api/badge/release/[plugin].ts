@@ -14,10 +14,10 @@ export default defineBadgeEventHandler(async (event) => {
 
     let release = 'unknown'
     if (plugins[plugin].githubRepo) {
-        release = await getGitHubRelease(plugins[plugin].githubRepo)
+        release = await getGitHubRelease(plugins[plugin].githubRepo).catch(() => 'error')
     }
 
     return badgen({
-        label: 'release', status: release, color: 'blue'
+        label: 'release', status: release, color: (release == 'error') ? 'red' : 'blue'
     })
 })
