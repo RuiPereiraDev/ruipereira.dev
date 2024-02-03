@@ -4,6 +4,7 @@
   "author": "Rui Pereira <me@ruipereira.dev>",
   "license": "MIT",
   "private": true,
+  "packageManager": "yarn@4.1.0",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
