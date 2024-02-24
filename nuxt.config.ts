@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import svgLoader from 'vite-svg-loader'
-
 export default defineNuxtConfig({
     srcDir: 'src/',
     css: ['~/assets/scss/main.scss'],
@@ -11,9 +9,6 @@ export default defineNuxtConfig({
             name: 'page',
             mode: 'out-in'
         }
-    },
-    vite: {
-        plugins: [svgLoader({})]
     },
     nitro: {
         storage: {

@@ -1,13 +1,7 @@
 @import "variables";
 @import "ress";
 
-@font-face {
-  font-family: "Varela Round";
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url("../fonts/VarelaRound-Regular.woff2") format("woff2"), url("../fonts/VarelaRound-Regular.woff") format("woff"), url("../fonts/VarelaRound-Regular.ttf") format("truetype");
-}
+@import '@fontsource/varela-round/latin.css';
 
 html, body {
   font-family: "Varela Round", Arial, sans-serif;
@@ -67,5 +61,11 @@ $wenk-bg-color: #333333;
 [data-wenk] {
   &:after {
     padding: 5px 9px;
+  }
+
+  &:hover {
+    &:after {
+      transform: translate(-50%, -2px);
+    }
   }
 }

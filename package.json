@@ -12,16 +12,18 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
+    "@fontsource/varela-round": "^5.0.8",
+    "@remixicon/vue": "^4.1.0",
     "badgen": "^3.2.3",
-    "remixicon": "^3.7.0",
     "ress": "^5.0.2",
     "wenk": "^1.0.8"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.8",
     "@nuxt/image": "^1.3.0",
-    "nuxt": "^3.10.0",
-    "sass": "^1.70.0",
-    "vite-svg-loader": "^4.0.0"
+    "nuxt": "^3.10.3",
+    "sass": "^1.71.1",
+    "vite": "^5.1.4",
+    "vue": "^3.4.19"
   }
 }

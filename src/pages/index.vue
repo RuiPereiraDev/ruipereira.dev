@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import GitHubIcon from 'remixicon/icons/Logos/github-line.svg'
-import EmailIcon from 'remixicon/icons/Business/at-line.svg'
-import InstagramIcon from 'remixicon/icons/Logos/instagram-line.svg'
-import SteamIcon from 'remixicon/icons/Logos/steam-line.svg'
-import DiscordIcon from 'remixicon/icons/Logos/discord-line.svg'
+import { RiGithubLine, RiAtLine, RiInstagramLine, RiSteamLine, RiDiscordLine } from "@remixicon/vue";
 </script>
 
 <template>
@@ -15,19 +11,19 @@ import DiscordIcon from 'remixicon/icons/Logos/discord-line.svg'
 
     <div class="icons">
       <a href="https://github.com/r4g3baby" target="_blank" aria-label="GitHub" data-wenk="GitHub">
-        <GitHubIcon/>
+        <RiGithubLine/>
       </a>
       <a href="mailto:me@ruipereira.dev" aria-label="Email" data-wenk="Email">
-        <EmailIcon/>
+        <RiAtLine/>
       </a>
       <a href="https://instagram.com/ruipereira.dev" target="_blank" aria-label="Instagram" data-wenk="Instagram">
-        <InstagramIcon/>
+        <RiInstagramLine/>
       </a>
       <a href="https://steamcommunity.com/id/r4g3baby" target="_blank" aria-label="Steam" data-wenk="Steam">
-        <SteamIcon/>
+        <RiSteamLine/>
       </a>
       <a href="https://discord.gg/cJnzTDGphE" target="_blank" aria-label="Discord" data-wenk="Discord">
-        <DiscordIcon/>
+        <RiDiscordLine/>
       </a>
     </div>
   </main>
@@ -59,7 +55,7 @@ import DiscordIcon from 'remixicon/icons/Logos/discord-line.svg'
   }
 
   .description {
-    margin: 6px 0 8px;
+    margin: 6px 0 6px;
   }
 
   .icons {
