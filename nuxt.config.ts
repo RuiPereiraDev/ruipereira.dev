@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     srcDir: 'src/',
     css: ['~/assets/scss/main.scss'],
     telemetry: false,
+    compatibilityDate: '2024-08-03',
     modules: ['@nuxt/devtools', '@nuxt/image'],
     app: {
         pageTransition: {
