@@ -20,6 +20,9 @@ importers:
       ress:
         specifier: ^5.0.2
         version: 5.0.2
+      vue:
+        specifier: ^3.4.36
+        version: 3.4.36
       wenk:
         specifier: ^1.0.8
         version: 1.0.8
@@ -39,9 +42,6 @@ importers:
       vite:
         specifier: ^5.4.0
         version: 5.4.0(@types/node@22.1.0)(sass@1.77.8)(terser@5.31.4)
-      vue:
-        specifier: ^3.4.36
-        version: 3.4.36
 
 packages:
 
