@@ -1,4 +1,4 @@
-import {defineBadgeEventHandler, getDiscordOnline} from '~/server/utils/badges'
+import {defineBadgeEventHandler, cachedDiscordPresenceCount} from '~/server/utils/badges'
 import {formatMetric} from '~/server/utils/formatter'
 import {badgen} from 'badgen'
 
@@ -7,7 +7,7 @@ export default defineBadgeEventHandler(async (event) => {
 
     let online = 0
     if (guildID !== undefined) {
-        online = await getDiscordOnline(guildID).catch(() => -1)
+        online = await cachedDiscordPresenceCount(event, guildID).catch(() => -1)
     }
 
     return badgen({

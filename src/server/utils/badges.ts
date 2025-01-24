@@ -1,4 +1,4 @@
-import type {EventHandler, EventHandlerRequest} from 'h3'
+import type { EventHandler, EventHandlerRequest, H3Event } from 'h3'
 
 export const getBStatsPlayers = cachedFunction(async (pluginID: number): Promise<number> => {
     const response = await apiFetch<number[][]>(`https://bstats.org/api/v1/plugins/${pluginID}/charts/players/data?maxElements=1`)
@@ -47,6 +47,11 @@ export const getDiscordOnline = cachedFunction(async (guildID: string): Promise<
     const guild = await apiFetch<DiscordGuild>(`https://discord.com/api/v6/guilds/${guildID}/widget.json`)
     return guild.presence_count
 }, {name: 'discord/online', getKey: (guildID) => guildID, maxAge: 60})
+
+export const cachedDiscordPresenceCount = defineCachedFunction(async (event: H3Event, guildID: string) => {
+    const data = await $fetch<DiscordGuild>(`https://discord.com/api/v10/guilds/${guildID}/widget.json`)
+    return data.presence_count
+}, {name: 'discord/presenceCount', getKey: (_: H3Event, guildID: string) => guildID, maxAge: 60 * 30})
 
 export const defineBadgeEventHandler = <T extends EventHandlerRequest, D>(
     handler: EventHandler<T, D>
