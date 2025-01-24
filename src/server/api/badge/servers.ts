@@ -1,6 +1,6 @@
-import {defineBadgeEventHandler, getBStatsServers} from '~/server/utils/badges'
-import {formatMetric} from '~/server/utils/formatter'
-import {badgen} from 'badgen'
+import { cachedBStatsServers, defineBadgeEventHandler } from '~/server/utils/badges'
+import { formatMetric } from '~/server/utils/formatter'
+import { badgen } from 'badgen'
 
 export default defineBadgeEventHandler(async (event) => {
     const plugins: Record<string, any> = useRuntimeConfig(event).plugins
@@ -10,7 +10,7 @@ export default defineBadgeEventHandler(async (event) => {
     const requests: Promise<number>[] = []
     for (const plugin in plugins) {
         for (const bStatsID of plugins[plugin].bStats) {
-            requests.push(getBStatsServers(bStatsID).then(result => servers += result))
+            requests.push(cachedBStatsServers(event, bStatsID).then(result => servers += result))
         }
     }
     await Promise.allSettled(requests)

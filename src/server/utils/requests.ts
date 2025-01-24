@@ -1,4 +1,4 @@
-import {ofetch} from 'ofetch'
+import { ofetch } from 'ofetch'
 
 export const apiFetch = ofetch.create({
     headers: {
