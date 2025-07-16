@@ -46,7 +46,7 @@ export const cachedGitHubRelease = defineCachedFunction(async (_: H3Event, repos
 export const cachedDiscordCount = defineCachedFunction(async (_: H3Event, guildID: string) => {
     const data = await apiFetch<DiscordGuild>(`https://discord.com/api/v10/guilds/${guildID}/widget.json`)
     return data.presence_count
-}, {name: 'discord/count', getKey: (_: H3Event, guildID: string) => guildID, maxAge: 60 * 30})
+}, {name: 'discord/count', getKey: (_: H3Event, guildID: string) => guildID, maxAge: 60 * 10})
 
 export const defineBadgeEventHandler = <T extends EventHandlerRequest, D>(
     handler: EventHandler<T, D>

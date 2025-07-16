@@ -1,9 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    srcDir: 'src/',
     css: ['~/assets/scss/main.scss'],
     telemetry: false,
-    compatibilityDate: '2024-08-03',
+    compatibilityDate: '2025-01-01',
     modules: ['@nuxt/devtools', '@nuxt/image'],
     app: {
         pageTransition: {
@@ -12,6 +11,11 @@ export default defineNuxtConfig({
         }
     },
     nitro: {
+        preset: 'cloudflare_module',
+        cloudflare: {
+            deployConfig: true,
+            nodeCompat: true
+        },
         storage: {
             cache: {
                 driver: 'cloudflareKVBinding',

@@ -1,7 +1,7 @@
 $primary: #c33131;
 
 $body-text-color: #efefef;
-$body-background-color: #14151a;
+$body-background-color: #0f0f0f; // #14151a
 
 $link-color: #efefef;
 $link-decoration: none;
@@ -10,7 +10,7 @@ $link-hover-decoration: none;
 
 $header-height: 52px;
 $header-text-color: #a9a9b3;
-$header-background-color: #181b25;
+$header-background-color: #171717; // #181b25
 
 :root {
   --var-primary: #{$primary};

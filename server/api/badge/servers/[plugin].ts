@@ -1,5 +1,5 @@
-import { cachedBStatsServers, defineBadgeEventHandler } from '~/server/utils/badges'
-import { formatMetric } from '~/server/utils/formatter'
+import { cachedBStatsServers, defineBadgeEventHandler } from '~~/server/utils/badges'
+import { formatMetric } from '~~/server/utils/formatter'
 import { badgen } from 'badgen'
 
 export default defineBadgeEventHandler(async (event) => {

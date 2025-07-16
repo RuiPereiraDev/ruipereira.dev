@@ -1,4 +1,4 @@
-import { cachedGitHubRelease, defineBadgeEventHandler } from '~/server/utils/badges'
+import { cachedGitHubRelease, defineBadgeEventHandler } from '~~/server/utils/badges'
 import { badgen } from 'badgen'
 
 export default defineBadgeEventHandler(async (event) => {

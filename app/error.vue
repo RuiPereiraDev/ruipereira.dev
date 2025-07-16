@@ -24,7 +24,7 @@ const handleError = () => clearError({redirect: '/'})
 
 <template>
   <main class="main">
-    <h1 class="title">{{ props.error.message }}</h1>
+    <h1 class="title">{{ props.error?.message }}</h1>
     <p class="description">Oops! <a @click="handleError" href="/">Click here</a> to go back home.</p>
   </main>
 </template>
