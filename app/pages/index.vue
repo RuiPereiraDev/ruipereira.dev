@@ -5,7 +5,7 @@ import { RiAtLine, RiDiscordLine, RiGithubLine, RiInstagramLine, RiSteamLine } f
 <template>
   <div class="index">
     <div class="img-wrapper">
-      <NuxtImg src="/assets/img/me.jpg" alt="me" width="160" height="160" :placeholder="[20, 20, 100, 3]"/>
+      <NuxtImg src="/assets/img/me@320px.jpg" alt="me" width="160" height="160"/>
     </div>
     <div class="content">
       <div class="content-title">
