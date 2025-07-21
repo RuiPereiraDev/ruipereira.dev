@@ -3,27 +3,39 @@ const route = useRoute()
 
 const pageTitle = () => {
   const title = route.meta.title
+  if (title === null) return undefined
   return title ? `${title} - Rui Pereira` : 'Rui Pereira'
 }
 
 const pageDescription = () => {
   const description = route.meta.description
+  if (description === null) return undefined
   return description ? `${description}` : 'Full-Stack Developer'
+}
+
+const setSeoMeta = () => {
+  const useSeoMeta = route.meta.useSeoMeta
+  return useSeoMeta !== undefined ? useSeoMeta : true
 }
 
 useSeoMeta({
   title: pageTitle,
-  description: pageDescription,
-  ogTitle: pageTitle,
-  ogDescription: pageDescription,
-  ogImage: 'https://ruipereira.dev/assets/img/avatar.png',
-  ogUrl: 'https://ruipereira.dev',
-  ogType: 'website',
-  twitterTitle: pageTitle,
-  twitterDescription: pageDescription,
-  twitterImage: 'https://ruipereira.dev/assets/img/avatar.png',
-  twitterCard: 'summary'
+  description: pageDescription
 })
+
+if (setSeoMeta()) {
+  useSeoMeta({
+    ogTitle: pageTitle,
+    ogDescription: pageDescription,
+    ogImage: 'https://ruipereira.dev/assets/img/avatar.png',
+    ogUrl: 'https://ruipereira.dev',
+    ogType: 'website',
+    twitterTitle: pageTitle,
+    twitterDescription: pageDescription,
+    twitterImage: 'https://ruipereira.dev/assets/img/avatar.png',
+    twitterCard: 'summary'
+  })
+}
 
 useHead({
   htmlAttrs: {

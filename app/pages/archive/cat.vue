@@ -1,11 +1,19 @@
 <script setup lang="ts">
-useSeoMeta({
-  robots: 'noindex, nofollow'
-})
+/*
+Old animated cat I found lying around on my backups hard drive.
+I don't remember who the original author is, but I have done a
+full recode of the JavaScript side, mostly for fun.
+*/
 
 definePageMeta({
   layout: false,
-  title: 'Dancing Cat'
+  title: 'Dancing Cat',
+  description: null,
+  useSeoMeta: false
+})
+
+useSeoMeta({
+  robots: 'noindex, nofollow'
 })
 
 const delay = 90;
