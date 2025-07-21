@@ -10,9 +10,6 @@ export default defineNuxtConfig({
             mode: 'out-in'
         }
     },
-    image: {
-        provider: 'ipx'
-    },
     runtimeConfig: {
         guildID: '217018114083127296',
         plugins: {
@@ -39,9 +36,6 @@ export default defineNuxtConfig({
                 wrangler: {
                     name: 'ruipereira',
                     compatibility_date: '2025-05-05',
-                    placement: {
-                        mode: 'smart'
-                    },
                     kv_namespaces: [{
                         binding: 'CACHE',
                         id: 'ecd92fd528a4437e90c998d1d37137c8'
