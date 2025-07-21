@@ -12,6 +12,7 @@ $screen-sm-min: 576px;
 $screen-md-min: 768px;
 $screen-lg-min: 992px;
 $screen-xl-min: 1200px;
+$screen-xxl-min: 1400px;
 
 :root {
   --var-primary: #{$primary};
@@ -28,4 +29,5 @@ $screen-xl-min: 1200px;
   --screen-md-min: #{$screen-md-min};
   --screen-lg-min: #{$screen-lg-min};
   --screen-xl-min: #{$screen-xl-min};
+  --screen-xxl-min: #{$screen-xxl-min};
 }

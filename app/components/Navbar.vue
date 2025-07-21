@@ -54,10 +54,11 @@
 
   @include mixins.lg {
     width: 75vw;
-    @include mixins.xl {
+    margin: auto;
+
+    @include mixins.xxl {
       width: 60vw;
     }
-    margin: auto;
   }
 }
 </style>
