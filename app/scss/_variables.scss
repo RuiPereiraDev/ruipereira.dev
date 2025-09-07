@@ -1,0 +1,33 @@
+$primary: #c33131;
+
+$body-text-color: #efefef;
+$body-background-color: #14151a;
+
+$link-color: #efefef;
+$link-decoration: none;
+$link-hover-color: #c33131;
+$link-hover-decoration: none;
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+$screen-xxl-min: 1400px;
+
+:root {
+  --var-primary: #{$primary};
+
+  --body-text-color: #{$body-text-color};
+  --body-background-color: #{$body-background-color};
+
+  --link-color: #{$link-color};
+  --link-decoration: #{$link-decoration};
+  --link-hover-color: #{$link-hover-color};
+  --link-hover-decoration: #{$link-hover-decoration};
+
+  --screen-sm-min: #{$screen-sm-min};
+  --screen-md-min: #{$screen-md-min};
+  --screen-lg-min: #{$screen-lg-min};
+  --screen-xl-min: #{$screen-xl-min};
+  --screen-xxl-min: #{$screen-xxl-min};
+}

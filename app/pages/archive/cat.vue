@@ -1,37 +1,122 @@
-<!--
+<script setup lang="ts">
+/*
 Old animated cat I found lying around on my backups hard drive.
 I don't remember who the original author is, but I have done a
-full recode of the javascript side, mostly for fun.
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dancing Cat</title>
+full recode of the JavaScript side, mostly for fun.
+*/
 
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-color: #000;
-        }
+definePageMeta({
+  layout: false,
+  title: 'Dancing Cat',
+  description: null,
+  useSeoMeta: false
+})
 
-        div[id^="frame"] {
-            position: absolute;
-            display: none;
-            font-size: 8px;
-            color: #c33131;
+useSeoMeta({
+  robots: 'noindex, nofollow'
+})
+
+const delay = 90;
+const moveFrame = true;
+const randomizeColor = true;
+
+onMounted(() => {
+  let frames: NodeListOf<HTMLElement>;
+  let cFrame = 1;
+  let pFrame = 0;
+
+  function animate(reverse: boolean) {
+    frames[cFrame - 1].style.display = 'block';
+    if (pFrame > 0) {
+      frames[pFrame - 1].style.display = '';
+    }
+
+    pFrame = cFrame;
+    if (cFrame === frames.length) {
+      cFrame -= 1;
+
+      if (randomizeColor) {
+        changeColor();
+      }
+
+      setTimeout(function () {
+        animate(true);
+      }, delay);
+    } else {
+      if (reverse) {
+        if (cFrame === 1) {
+          cFrame += 1;
+
+          if (randomizeColor) {
+            changeColor();
+          }
+
+          setTimeout(function () {
+            animate(false);
+          }, delay);
+        } else {
+          cFrame -= 1;
+
+          setTimeout(function () {
+            animate(true);
+          }, delay);
         }
-    </style>
-</head>
-<body>
-<script>
-    const delay = 90;
-    const moveFrame = true;
-    const randomizeColor = true;
+      } else {
+        cFrame += 1;
+
+        setTimeout(function () {
+          animate(false);
+        }, delay);
+      }
+    }
+  }
+
+  function changeColor() {
+    let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    for (let i = 0; i < frames.length; i++) {
+      frames[i].style.color = color;
+    }
+  }
+
+  (function () {
+    let left = 0;
+
+    frames = document.querySelectorAll<HTMLElement>('div[id^="frame"]');
+    for (let i = 0; i < frames.length; i++) {
+      const frame = frames[i];
+
+      if (moveFrame) {
+        left = left + 2;
+      }
+      frame.style.left = left + '%';
+    }
+
+    if (randomizeColor) {
+      changeColor();
+    }
+
+    animate(false);
+  })();
+})
 </script>
 
-<div id="frame1">
+<style scoped lang="scss">
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+div[id^="frame"] {
+  position: absolute;
+  display: none;
+  font-size: 8px;
+  color: #c33131;
+}
+</style>
+
+<template>
+  <div id="frame1">
     <pre>
                                                                             ,c,
                                                                         cARRRRRC,
@@ -102,8 +187,8 @@ full recode of the javascript side, mostly for fun.
                                      ,TACCCCCCCCsc,,
                                       ,,,,,,,,,,,
     </pre>
-</div>
-<div id="frame2">
+  </div>
+  <div id="frame2">
     <pre>
                                                                        ,cARCc
          ,sRRCc,                             ,                     ,,CRRRRRRRA,
@@ -173,8 +258,8 @@ full recode of the javascript side, mostly for fun.
                                      ,,cccTCCTcsTCcc,,
                                           ,,,,c,,,,
     </pre>
-</div>
-<div id="frame3">
+  </div>
+  <div id="frame3">
     <pre>
                                                                      cCAs,
                                                                  ,TRRRRRRRc,
@@ -244,8 +329,8 @@ full recode of the javascript side, mostly for fun.
                                            ,csccccccsTCcc,
                                              ,,,,,,,,,,,
     </pre>
-</div>
-<div id="frame4">
+  </div>
+  <div id="frame4">
     <pre>
                                                                   ,,,
                                                               ,TARRRRC,
@@ -314,8 +399,8 @@ full recode of the javascript side, mostly for fun.
                                    cTCCCTcccc,,             ,,
                                      ,,,,,,,
     </pre>
-</div>
-<div id="frame5">
+  </div>
+  <div id="frame5">
     <pre>
                                                                ,sCc,
                                                             ,CRRRRRA,
@@ -384,8 +469,8 @@ full recode of the javascript side, mostly for fun.
                                   ,cscccccccccc,
                                     ,c,,,,,c,,
     </pre>
-</div>
-<div id="frame6">
+  </div>
+  <div id="frame6">
     <pre>
                                                                ,TRRRRT,
   ,TRRRs,,                            ,                    ,cARRRRRRRRc,
@@ -451,8 +536,8 @@ full recode of the javascript side, mostly for fun.
                                    ,Tcc,,cccsTCs,
                                     ,ccc,,,c,,,,
     </pre>
-</div>
-<div id="frame7">
+  </div>
+  <div id="frame7">
     <pre>
       ,CRRT,                                                            ,,,
      cRRRRRRRCc,,               ,,,,,,,,,,,,,,,,,,,,,,,            ,cCRRRRRA,
@@ -518,8 +603,8 @@ full recode of the javascript side, mostly for fun.
                                    ,cTTccccc,,,
                                      ,cc,,
     </pre>
-</div>
-<div id="frame8">
+  </div>
+  <div id="frame8">
     <pre>
          ,CAc,,                                                              ,,
         cRRRRRRRAc,,              ,,,,,,,,,,,,,,,,,,,,,,,,,,            ,cCRRRRC,
@@ -587,8 +672,8 @@ full recode of the javascript side, mostly for fun.
                                                       ,,,ccTcc,,,
                                                           ,,,,,
     </pre>
-</div>
-<div id="frame9">
+  </div>
+  <div id="frame9">
     <pre>
               ,CAAc,                                                         cTAARc,
             ,cRRRRRRRCc                         ,,,                      ,TRRRRRRRRc,
@@ -657,8 +742,8 @@ full recode of the javascript side, mostly for fun.
                                                  ,cTTTsTCTcscc,
                                                    ,ccc,,,,,,
     </pre>
-</div>
-<div id="frame10">
+  </div>
+  <div id="frame10">
     <pre>
                                                                               ,cACc
                                                                            ,sARRRRRc,
@@ -729,8 +814,8 @@ full recode of the javascript side, mostly for fun.
                                                   ,cTTccc,,,,
                                                     ,,,
     </pre>
-</div>
-<div id="frame11">
+  </div>
+  <div id="frame11">
     <pre>
                       ,CRRC,                                                    ,TRAT,
                     ,CRRRRRRRAc,                                             cARRRRRRRc,
@@ -798,8 +883,8 @@ full recode of the javascript side, mostly for fun.
                                                 ,,ccccccccc,,,
                                                   ,,csc,,,
     </pre>
-</div>
-<div id="frame12">
+  </div>
+  <div id="frame12">
     <pre>
                     ,cCATTc
                   ,cARRRRRRCc,
@@ -869,8 +954,8 @@ full recode of the javascript side, mostly for fun.
                                                 ,,cccccccccccc,,
                                                   ,,cc,,,,,,,,
     </pre>
-</div>
-<div id="frame13">
+  </div>
+  <div id="frame13">
     <pre>
                    ,TRRRATc,
                   ,sRRRARRRACc,
@@ -940,8 +1025,8 @@ full recode of the javascript side, mostly for fun.
                                                 ,,cccccccccccc,,
                                                   ,,cc,,,,,,,,
     </pre>
-</div>
-<div id="frame14">
+  </div>
+  <div id="frame14">
     <pre>
                        ,cc,
                      ,CRRRRCsc
@@ -1013,8 +1098,8 @@ full recode of the javascript side, mostly for fun.
                                                 ,ccsccccccccc,,
                                                   ,,,,,,,,,,,
     </pre>
-</div>
-<div id="frame15">
+  </div>
+  <div id="frame15">
     <pre>
                       ,,c,
                     ,cCRRRCc,
@@ -1086,8 +1171,8 @@ full recode of the javascript side, mostly for fun.
                                              ,,,,,cccccccccc,,
                                                    ,,,,
     </pre>
-</div>
-<div id="frame16">
+  </div>
+  <div id="frame16">
     <pre>
                      ,cTc,
                     ,TRRRACTc,
@@ -1160,8 +1245,8 @@ full recode of the javascript side, mostly for fun.
                                              ,,ccssTcc,,
                                                  ,,,c,,,
     </pre>
-</div>
-<div id="frame17">
+  </div>
+  <div id="frame17">
     <pre>
                               ,CAAc,
                              cRRRRRACc,
@@ -1235,8 +1320,8 @@ full recode of the javascript side, mostly for fun.
                                                         ,,ccsTCTTc,
                                                              ,,,,,
     </pre>
-</div>
-<div id="frame18">
+  </div>
+  <div id="frame18">
     <pre>
                                          ccc,
                                        ,CRRRT,
@@ -1308,8 +1393,8 @@ full recode of the javascript side, mostly for fun.
                                     ,CRRRRRTTRRAc,      ,,,,,,,,,,,,,,,,,
                                       ,,,,,,,,,
     </pre>
-</div>
-<div id="frame19">
+  </div>
+  <div id="frame19">
     <pre>
                                                   ,,,
                                                  ,ARC,
@@ -1382,8 +1467,8 @@ full recode of the javascript side, mostly for fun.
                                      csscARRRRCc          ,,,,,,,,,,,,,
                                       ,cc,cc,
     </pre>
-</div>
-<div id="frame20">
+  </div>
+  <div id="frame20">
     <pre>
                                                                               ,
                                                                          ,,,,,,
@@ -1455,8 +1540,8 @@ full recode of the javascript side, mostly for fun.
                                     ,cARRRCCc,            ,,,,,,,c,,,,,,
                                      ,cc,
     </pre>
-</div>
-<div id="frame21">
+  </div>
+  <div id="frame21">
     <pre>
                                                 ,,,,,
                                      ,,,,,,,,,,,,,,,,,,,,,,
@@ -1522,8 +1607,8 @@ full recode of the javascript side, mostly for fun.
                                   ,cCAARRRsc,,            ,ccccccccc,,,,
                                     ,sCCTc,                  ,,,,,,,,
     </pre>
-</div>
-<div id="frame22">
+  </div>
+  <div id="frame22">
     <pre>
               ,,,,,
              ,,,,,,,,,,,,
@@ -1592,8 +1677,8 @@ full recode of the javascript side, mostly for fun.
                                       ,,sCRRRCc,              ,,,
                                         ,,,,
     </pre>
-</div>
-<div id="frame23">
+  </div>
+  <div id="frame23">
     <pre>
                           ,,,,
                           ,,c,,,,
@@ -1669,8 +1754,8 @@ full recode of the javascript side, mostly for fun.
                                           ,TCTCAACTc,
                                            ,,,
     </pre>
-</div>
-<div id="frame24">
+  </div>
+  <div id="frame24">
     <pre>
                                    ,sCc
                                    ,RRT,,,
@@ -1745,8 +1830,8 @@ full recode of the javascript side, mostly for fun.
                                             ,TCTcRRRRC,
                                              ,csccc,
     </pre>
-</div>
-<div id="frame25">
+  </div>
+  <div id="frame25">
     <pre>
                                           ,Tc
                                         ,cRRRc,
@@ -1822,8 +1907,8 @@ full recode of the javascript side, mostly for fun.
                                              ,TAATcc,
                                               ,,,,
     </pre>
-</div>
-<div id="frame26">
+  </div>
+  <div id="frame26">
     <pre>
                                                            ,,
                                                        ,cCRRRc,
@@ -1901,8 +1986,8 @@ full recode of the javascript side, mostly for fun.
                                                        ,,TCT,
                                                           ,
     </pre>
-</div>
-<div id="frame27">
+  </div>
+  <div id="frame27">
     <pre>
                                                                         ,ccc,
                                                                      ,cTRRRRRT,
@@ -1981,8 +2066,8 @@ full recode of the javascript side, mostly for fun.
                                                       ,,,,cccsTTc,
                                                               ,,
     </pre>
-</div>
-<div id="frame28">
+  </div>
+  <div id="frame28">
     <pre>
                                                                              ,ccsCAT,
                                                                            ,cRRRRRRRA,,
@@ -2060,8 +2145,8 @@ full recode of the javascript side, mostly for fun.
                                                         ,CCccccccccc,
                                                          ,,,
     </pre>
-</div>
-<div id="frame29">
+  </div>
+  <div id="frame29">
     <pre>
                                                                                    ,
                                                                                ,cTARRT,
@@ -2140,8 +2225,8 @@ full recode of the javascript side, mostly for fun.
                                                       ,,ccTTTTCCACTc,
                                                              ,,,,,
     </pre>
-</div>
-<div id="frame30">
+  </div>
+  <div id="frame30">
     <pre>
                                                                               ccTTc,
                                                                            ,cRRRRRRc,
@@ -2219,8 +2304,8 @@ full recode of the javascript side, mostly for fun.
                                                       ,cTCCCCTTTTCTTc,,,
                                                         ,,,,,,ccc,,
     </pre>
-</div>
-<div id="frame31">
+  </div>
+  <div id="frame31">
     <pre>
                                                                                 ,,
                                                                              ,cCAAT,
@@ -2298,85 +2383,5 @@ full recode of the javascript side, mostly for fun.
                                                       ,,,ccccTTCTcc,,,
                                                               ,,,
     </pre>
-</div>
-
-<script>
-    let frames;
-    let cFrame = 1;
-    let pFrame = 0;
-
-    function animate(reverse) {
-        frames[cFrame - 1].style.display = 'block';
-        if (pFrame > 0) {
-            frames[pFrame - 1].style.display = '';
-        }
-
-        pFrame = cFrame;
-        if (cFrame === frames.length) {
-            cFrame -= 1;
-
-            if (randomizeColor) {
-                changeColor();
-            }
-
-            setTimeout(function () {
-                animate(true);
-            }, delay);
-        } else {
-            if (reverse) {
-                if (cFrame === 1) {
-                    cFrame += 1;
-
-                    if (randomizeColor) {
-                        changeColor();
-                    }
-
-                    setTimeout(function () {
-                        animate(false);
-                    }, delay);
-                } else {
-                    cFrame -= 1;
-
-                    setTimeout(function () {
-                        animate(true);
-                    }, delay);
-                }
-            } else {
-                cFrame += 1;
-
-                setTimeout(function () {
-                    animate(false);
-                }, delay);
-            }
-        }
-    }
-
-    function changeColor() {
-        let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        for (let i = 0; i < frames.length; i++) {
-            frames[i].style.color = color;
-        }
-    }
-
-    (function () {
-        let left = 0;
-
-        frames = document.querySelectorAll('div[id^="frame"]');
-        for (let i = 0; i < frames.length; i++) {
-            const frame = frames[i];
-
-            if (moveFrame) {
-                left = left + 2;
-            }
-            frame.style.left = left + '%';
-        }
-
-        if (randomizeColor) {
-            changeColor();
-        }
-
-        animate();
-    })();
-</script>
-</body>
-</html>
+  </div>
+</template>

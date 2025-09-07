@@ -1,28 +1,30 @@
 {
-    "name": "ruipereira.dev",
-    "version": "1.0.0",
-    "repository": "git@github.com:r4g3baby/ruipereira.dev.git",
-    "author": "Rui Pereira <me@ruipereira.dev>",
-    "license": "MIT",
-    "private": true,
-    "scripts": {
-        "build": "webpack"
-    },
-    "dependencies": {
-        "wenk": "^1.0.8"
-    },
-    "devDependencies": {
-        "copy-webpack-plugin": "^11.0.0",
-        "css-loader": "^6.7.1",
-        "css-minimizer-webpack-plugin": "^4.0.0",
-        "html-webpack-plugin": "^5.5.0",
-        "mini-css-extract-plugin": "^2.6.1",
-        "pug": "^3.0.2",
-        "pug-loader": "^2.4.0",
-        "sass": "^1.54.9",
-        "sass-loader": "^13.0.2",
-        "webpack": "^5.74.0",
-        "webpack-cli": "^4.10.0",
-        "webpack-remove-empty-scripts": "^0.8.3"
-    }
+  "name": "ruipereira.dev",
+  "repository": "git@github.com:RuiPereiraDev/ruipereira.dev.git",
+  "author": "Rui Pereira <me@ruipereira.dev>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@fontsource/varela-round": "^5.2.6",
+    "@remixicon/vue": "^4.6.0",
+    "badgen": "^3.2.3",
+    "ress": "^5.0.2",
+    "wenk": "^1.0.8"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "2.6.3",
+    "@nuxt/image": "^1.11.0",
+    "nuxt": "^4.1.1",
+    "sass": "^1.92.1",
+    "vite": "^7.1.4",
+    "vue": "^3.5.21",
+    "vue-router": "^4.5.1"
+  },
+  "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
 }

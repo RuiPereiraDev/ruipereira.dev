@@ -98,8 +98,14 @@ web_modules/
 out
 
 # Nuxt.js build / generate output
-.nuxt
 dist
+.nuxt
+.nuxt-*
+.output
+.gen
+
+# Cloudflare
+.wrangler
 
 # Gatsby files
 .cache/
