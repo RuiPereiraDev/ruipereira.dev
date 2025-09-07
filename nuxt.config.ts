@@ -18,12 +18,12 @@ export default defineNuxtConfig({
                 spigotID: 23243,
                 hangarID: 'SimpleScore',
                 modrinthID: 'qG43Afem',
-                githubRepo: 'r4g3baby/SimpleScore'
+                githubRepo: 'RuiPereiraDev/SimpleScore'
             },
             SimpleMOTD: {
                 bStats: [19306, 19307, 19308, 19309],
                 spigotID: 2581,
-                githubRepo: 'r4g3baby/SimpleMOTD'
+                githubRepo: 'RuiPereiraDev/SimpleMOTD'
             }
         }
     },

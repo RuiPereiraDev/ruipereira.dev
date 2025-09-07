@@ -15,7 +15,7 @@ import { RiAtLine, RiDiscordLine, RiGithubLine, RiInstagramLine, RiSteamLine } f
         Full-Stack Developer
       </div>
       <div class="content-icons">
-        <a href="https://github.com/r4g3baby" target="_blank" aria-label="GitHub" data-wenk="GitHub">
+        <a href="https://github.com/RuiPereiraDev" target="_blank" aria-label="GitHub" data-wenk="GitHub">
           <RiGithubLine/>
         </a>
         <a href="https://modrinth.com/user/r4g3baby" target="_blank" aria-label="Modrinth" data-wenk="Modrinth">
